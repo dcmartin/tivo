@@ -43,7 +43,7 @@ else if ($#XML > 0) then
 	echo "Age: $AGE"
 	echo "Cache-Control: max-age=$TTL"
 	echo -n "Last-Modified: "
-	date -r "$DATE"
+	date -r "$DATE" '+%a, %d %b %Y %H:%M:%S %Z'
 	echo ""
 	echo "$API -- Using $XML[1]" >>! $TMP/LOG
 	cat "$XML[1]"

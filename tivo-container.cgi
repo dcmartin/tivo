@@ -29,6 +29,6 @@ set AGE = `echo "$SECONDS - $DATE" | bc`
 echo "Age: $AGE"
 echo "Cache-Control: max-age=$TTL"
 echo -n "Last-Modified: "
-date -r "$DATE"
+date -r "$DATE" '+%a, %d %b %Y %H:%M:%S %Z'
 echo ""
 /usr/local/bin/xml fo "$XML"

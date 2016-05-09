@@ -30,7 +30,7 @@ if ($?MPG && -e "$MPG") then
     echo "Age: $AGE"
     echo "Cache-Control: max-age=$TTL"
     echo -n "Last-Modified: "
-    date -r "$DATE"
+    date -r "$DATE" '+%a, %d %b %Y %H:%M:%S %Z'
     echo -n "Content-Disposition: Attachment; filename="
     echo "$MPG:t"
     echo -n "Content-Length: "
@@ -46,7 +46,7 @@ else
     echo "Age: 0"
     echo "Cache-Control: max-age=0"
     echo -n "Last-Modified: "
-    date -r "$SECONDS"
+    date -r "$SECONDS" '+%a, %d %b %Y %H:%M:%S %Z'
     echo -n "Content-Disposition: Attachment; filename="
     echo "$MPG:t"
     echo ""

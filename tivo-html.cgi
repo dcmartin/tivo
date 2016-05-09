@@ -81,7 +81,7 @@ if (-e "$OUT" && $OUTSIZE > 0) then
     echo "Age: $AGE"
     echo "Cache-Control: max-age=$TTL"
     echo -n "Last-Modified: "
-    date -r "$DATE"
+    date -r "$DATE" '+%a, %d %b %Y %H:%M:%S %Z'
     echo ""
     cat "$OUT"
 else if (-e "$OUT") then

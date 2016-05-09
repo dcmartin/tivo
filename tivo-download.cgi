@@ -114,7 +114,7 @@ done:
 	echo "Age: $AGE"
 	echo "Cache-Control: max-age=$TTL"
 	echo -n "Last-Modified: "
-	echo "$LAST"
+	date -r "$LAST" '+%a, %d %b %Y %H:%M:%S %Z'
 	echo -n "Content-Length: "
 	echo "$MPGSIZ"
 	echo ""
