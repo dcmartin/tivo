@@ -4,7 +4,7 @@ set WWW = "www.dcmartin.com"
 set LAN = "192.168.1"
 set TTL = 60
 set MAK = `cat ~$USER/.tivodecode_mak`
-set TMP = "/Volumes/RAID10/TIVO"
+set TMP = "/Volumes/NITRO/TIVO"
 if (! -e "$TMP") set TMP = "/tmp"
 # get time
 set SECONDS = `date "+%s"`

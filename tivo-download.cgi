@@ -5,7 +5,7 @@ set LAN = "192.168.1"
 set MAK = `cat ~$USER/.tivodecode_mak`
 # seven days 
 set TTL = `echo "60 * 60 * 24 * 7" | bc`
-set TMP = "/Volumes/RAID10/TIVO"
+set TMP = "/Volumes/NITRO/TIVO"
 if (! -e "$TMP") set TMP = "/tmp"
 # get time
 set SECONDS = `date "+%s"`

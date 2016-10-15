@@ -3,7 +3,7 @@ set API = "allcsv"
 set WWW = "www.dcmartin.com"
 set LAN = "192.168.1"
 set TTL = 900
-set TMP = "/Volumes/RAID10/TIVO"
+set TMP = "/Volumes/NITRO/TIVO"
 set MAK = `cat ~$USER/.tivodecode_mak`
 if (! -e "$TMP") set TMP = "/tmp"
 # get time

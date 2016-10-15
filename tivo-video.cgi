@@ -1,10 +1,11 @@
 #!/bin/csh
+set APP = "tivo"
 set API = "video"
 set WWW = "www.dcmartin.com"
 set LAN = "192.168.1"
 set TTL = 2
 set MAK = `cat ~$USER/.tivodecode_mak`
-set TMP = "/Volumes/RAID10/TIVO"
+set TMP = "/Volumes/NITRO/TIVO"
 if (! -e "$TMP") set TMP = "/tmp"
 # get time
 set SECONDS = `date "+%s"`
@@ -18,6 +19,8 @@ if ($?QUERY_STRING) then
     set TIVO = `echo "$QUERY_STRING" | sed "s/.*port=\(2[0-4]\).*/\1/"`
     set ID = `echo "$QUERY_STRING" | sed "s/.*id=\([0-9]*\).*/\1/"`
 endif
+
+echo "BEGIN: $APP-$API -- $$" >>! $TMP/LOG
 
 set MIXPANELJS = "http://$WWW/CGI/script/mixpanel.js"
 
@@ -42,3 +45,5 @@ else
     echo "<h2>Not specified: $TIVO $ID</h2>"
 endif
 echo "</body></html>"
+
+echo "FINISH: $APP-$API -- $$" >>! $TMP/LOG
